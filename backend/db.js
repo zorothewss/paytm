@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 require("dotenv").config();
 
 mongoose
@@ -37,9 +37,24 @@ const userSchema = mongoose.Schema({
     maxLength: 50,
   },
 });
+
+const accountSchema = mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: User,
+    required: true,
+  },
+  balance: {
+    type: number,
+    required: true,
+  },
+});
+
 //create the model for the schema
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
+const Account = mongoose.model("Account", accountSchema);
 // export const User;
 module.exports = {
-    User
+  User,
+  Account,
 };
