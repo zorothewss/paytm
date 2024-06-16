@@ -57,7 +57,7 @@ router.post("/signup", async (req, res) => {
     userId: user._id,
     balance: 1 + Math.random() * 10000,
   })
-
+//temp
   res.json({
     msg: "User created succeffully",
     token: token,
