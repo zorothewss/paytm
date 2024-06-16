@@ -53,6 +53,11 @@ router.post("/signup", async (req, res) => {
     JWT_SECRET
   );
 
+  await Account({
+    userId: user._id,
+    balance: 1 + Math.random() * 10000,
+  })
+
   res.json({
     msg: "User created succeffully",
     token: token,
