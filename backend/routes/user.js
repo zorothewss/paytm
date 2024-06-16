@@ -96,7 +96,6 @@ router.post("/signin", async (req, res) => {
   }
 });
 
-module.exports = router;
 
 router.put("/", authMiddleware, async (req, res) => {
   const { success } = updateBody.safeParse(req.body);
@@ -138,3 +137,5 @@ router.get("/bulk", async (req, res) => {
     })),
   });
 });
+
+module.exports = router;
