@@ -1,7 +1,8 @@
 const mongoose = require("mongoose")
-dbURI = "mongodb+srv://zoro:zoro@123@paytm.um6ijy4.mongodb.net/paytm1"
+require("dotenv").config();
+
 mongoose
-  .connect(dbURI, {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
